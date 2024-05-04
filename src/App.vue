@@ -4,6 +4,7 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <LoginInfoButton></LoginInfoButton>
+  <ID_PWForm></ID_PWForm>
 </div>
 </template>
 
@@ -11,12 +12,14 @@
 import HelloWorld from './components/HelloWorld.vue'
 import LoginInfoButton from "@/components/atoms/LoginInfoButton.vue"
 import HeaderNavigationBar from "@/components/molecules/HeaderNavigationBar.vue"
+import ID_PWForm from "@/components/molecules/ID_PWForm.vue";
 export default {
   name: 'App',
   components: {
     HelloWorld,
     LoginInfoButton,
-    HeaderNavigationBar
+    HeaderNavigationBar,
+    ID_PWForm
   },
   created: function(){
     this.$store.dispatch('init')
