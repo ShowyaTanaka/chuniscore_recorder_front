@@ -4,7 +4,7 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <LoginInfoButton></LoginInfoButton>
-  <ID_PWForm></ID_PWForm>
+  <Create_User_Form/>
 </div>
 </template>
 
@@ -12,14 +12,14 @@
 import HelloWorld from './components/HelloWorld.vue'
 import LoginInfoButton from "@/components/atoms/LoginInfoButton.vue"
 import HeaderNavigationBar from "@/components/molecules/HeaderNavigationBar.vue"
-import ID_PWForm from "@/components/molecules/ID_PWForm.vue";
+import Create_User_Form from "@/components/molecules/Create_User_Form.vue"
 export default {
   name: 'App',
   components: {
     HelloWorld,
     LoginInfoButton,
     HeaderNavigationBar,
-    ID_PWForm
+    Create_User_Form
   },
   created: function(){
     this.$store.dispatch('init')
@@ -34,6 +34,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /*margin-top: 60px;*/
 }
 </style>

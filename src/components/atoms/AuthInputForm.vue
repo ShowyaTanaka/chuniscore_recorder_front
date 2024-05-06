@@ -1,3 +1,7 @@
+<script setup>
+import { defineEmits } from 'vue'
+const emit = defineEmits(["emit_value"])
+</script>
 <script>
 export default{
   name: 'AuthInputForm',
@@ -5,14 +9,13 @@ export default{
     is_password: {type: Boolean, required: true},
     input_field_id: {type: String, required: true},
     label_value: {type: String, required: true},
+  },
+  data()  {
+    return {
+      input_variable: ""
+    }
   }
 }
-</script>
-
-<script setup>
-// eslint-disable-next-line no-undef
-const input_variable = defineModel()
-
 </script>
 <template>
   <div class="parent_field">
@@ -20,13 +23,11 @@ const input_variable = defineModel()
     <input
         v-if="this.$props.is_password"
         id={{this.$props.input_field_id}}
-        type="password"
-        v-model = "input_variable" size="30">
+        type="password" size="30" :value=this.input_variable @input="emit('emit_value', $event.target.value)">
     <input
         v-else
         id={{this.$props.input_field_id}}
-        type="text"
-        v-model = "input_variable" size="30">
+        type="text" size="30" :value="this.input_variable" @input="emit('emit_value', $event.target.value)">
   </div>
 </template>
 
