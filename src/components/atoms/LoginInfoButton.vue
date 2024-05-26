@@ -7,12 +7,20 @@
 <b-nav-item-dropdown v-else :text="this.$store.state.user_name">
   <b-dropdown-item href="#">ユーザー設定</b-dropdown-item>
   <b-dropdown-item href="#">ゲキ！チュウマイプレイヤー設定</b-dropdown-item>
-  <b-dropdown-item href="#">ログアウト</b-dropdown-item>
+  <b-dropdown-item v-b-modal.modal-1>ログアウト</b-dropdown-item>
 </b-nav-item-dropdown>
+<LogOutModal/>
 </template>
 
 <style scoped>
 
 </style>
-<script setup lang="ts">
+<script>
+import LogOutModal from "@/components/molecules/LogOutModal.vue"
+export default {
+  name: "LoginInfoButton",
+  components: {
+    LogOutModal
+  }
+}
 </script>

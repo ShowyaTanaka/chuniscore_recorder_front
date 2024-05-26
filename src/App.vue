@@ -3,23 +3,34 @@
   <HeaderNavigationBar/>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <LoginInfoButton></LoginInfoButton>
-  <Create_User_Form/>
+  <CreateUserForm/>
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div>
+    <b-modal id="modal-1" hide-footer title="ログアウト">
+      <p class="my-4">ChuniScore Recorderからログアウトしますか？</p>
+      <b-button size="sm" variant="success" @click="ok()">
+        OK
+      </b-button>
+      <b-button size="sm" variant="danger" @click="cancel()">
+        Cancel
+      </b-button>
+    </b-modal>
+  </div>
+
 </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import LoginInfoButton from "@/components/atoms/LoginInfoButton.vue"
 import HeaderNavigationBar from "@/components/molecules/HeaderNavigationBar.vue"
-import Create_User_Form from "@/components/molecules/Create_User_Form.vue"
+import CreateUserForm from "@/components/molecules/CreateUserForm.vue"
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    LoginInfoButton,
     HeaderNavigationBar,
-    Create_User_Form
+    CreateUserForm
   },
   created: function(){
     this.$store.dispatch('init')
